@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛尔号辅助-高效精灵养成与战斗策略工具箱</title>
+    <meta name="description" content="赛尔号辅助提供专业的精灵强化、体力恢复、技能搭配及战斗模拟工具。安全无病毒，支持最新赛季环境，帮助赛尔号玩家轻松养成强力精灵，提升对战胜率。">
+    <meta name="keywords" content="赛尔号辅助,赛尔号工具,赛尔号攻略,赛尔号强化,赛尔号体力药">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Tools Section */
+        .tools-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .tool-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tool-btn {
+            align-self: flex-start;
+            padding: 0.4rem 1rem;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+        }
+
+        .tool-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .sidebar-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .guide-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .guide-list span {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            background: #f1f5f9;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>⚡</span> 赛尔辅助中心
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">强化计算</a></li>
+                    <li><a href="#">对战模拟</a></li>
+                    <li><a href="#">攻略百科</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">立即使用</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>赛尔号辅助工具箱</h1>
+            <p>专为赛尔号玩家打造的全方位养成辅助平台。从体力恢复、强化计算到战斗模拟，助您高效管理资源，制定最优精灵培养方案。</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>支持精灵</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0.1s</h3>
+                    <p>毫秒级计算</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>在线服务</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main class="tools-section">
+            <h2>核心功能工具</h2>
+            <div class="tool-grid">
+                
+                <article class="tool-card">
+                    <span class="tool-icon">📊</span>
+                    <h3>强化计算器</h3>
+                    <p>输入当前等级、强化次数及属性，精准预测最终数值。支持多种强化模式（成功、失败、极品）模拟，助您规划最优强化路径。</p>
+                    <a href="#" class="tool-btn">开始计算</a>
+                </article>
+
+                <article class="tool-card">
+                    <span class="tool-icon">💊</span>
+                    <h3>体力恢复助手</h3>
+                    <p>实时查询体力药库存状态，自动规划体力恢复时机。支持一键记录每日体力消耗，防止资源浪费。</p>
+                    <a href="#" class="tool-btn">管理体力</a>
+                </article>
+
+                <article class="tool-card">
+                    <span class="tool-icon">⚔️</span>
+                    <h3>战斗模拟器</h3>
+                    <p>模拟精灵对战过程，对比不同技能搭配与先手技能的效果。适用于PVE副本攻略与PVP排位策略制定。</p>
+                    <a href="#" class="tool-btn">进入模拟</a>
+                </article>
+
+                <article class="tool-card">
+                    <span class="tool-icon">🎒</span>
+                    <h3>背包整理助手</h3>
+                    <p>自动识别稀有道具、经验球及材料，一键分类整理。告别背包杂乱，快速找到所需物品。</p>
+                    <a href="#" class="tool-btn">整理背包</a>
+                </article>
+
+            </div>
+
+            <section class="faq-section">
+                <h2>常见问题解答</h2>
+                
+                <div class="faq-item">
+                    <h4>使用辅助工具会影响账号安全吗？</h4>
+                    <p>本站提供的工具均为纯前端计算与逻辑判断，不会接触您的游戏账号密码或服务器数据，请放心使用。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>强化计算器的数据准确吗？</h4>
+                    <p>我们依据官方最新的强化概率表进行编写，并定期更新维护，确保数据与游戏当前版本同步。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>体力助手如何工作？</h4>
+                    <p>您可以在游戏中记录每日体力上限和已使用量，系统将根据当前体力值给出恢复建议。</p>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-section">
+                <h3>热门攻略推荐</h3>
+                <ul class="guide-list">
+                    <li>
+                        <a href="#">2024年热门平民精灵培养指南</a>
+                        <span>攻略</span>
+                    </li>
+                    <li>
+                        <a href="#">BOSS战秒杀技巧与技能搭配</a>
+                        <span>BOSS</span>
+                    </li>
+                    <li>
+                        <a href="#">赛尔号体力药获取途径汇总</a>
+                        <span>资源</span>
+                    </li>
+                    <li>
+                        <a href="#">PVP竞技场主流阵容分析</a>
+                        <span>PVP</span>
+                    </li>
+                    <li>
+                        <a href="#">赛季更新内容与精灵调整</a>
+                        <span>资讯</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section" style="margin-top: 1.5rem;">
+                <h3>工具使用提示</h3>
+                <ul class="guide-list">
+                    <li>
+                        <a href="#">强化失败概率表</a>
+                        <span>数据</span>
+                    </li>
+                    <li>
+                        <a href="#">先手技能优先级排序</a>
+                        <span>技巧</span>
+                    </li>
+                    <li>
+                        <a href="#">背包空间优化建议</a>
+                        <span>整理</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">赛尔号辅助中心致力于为玩家提供最专业、最便捷的辅助工具，帮助大家节省时间，提升游戏体验。</p>
+            </div>
+            <div class="footer-col">
+                <h4>工具分类</h4>
+                <ul>
+                    <li><a href="#">强化计算</a></li>
+                    <li><a href="#">战斗模拟</a></li>
+                    <li><a href="#">体力管理</a></li>
+                    <li><a href="#">背包整理</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">反馈建议</a></li>
+                    <li><a href="#">联系管理员</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 赛尔号辅助中心 版权所有 | 本站为玩家学习交流工具，非官方网站</p>
+        </div>
+    </footer>
+
+</body>
+</html>
