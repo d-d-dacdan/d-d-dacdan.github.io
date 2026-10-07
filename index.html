@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="防震手抄报图片大全集，提供防震减灾主题手抄报设计素材、模板图片、版面布局及制作教程，适合学校安全教育作业参考。">
+    <meta name="keywords" content="防震手抄报图片大全集,防震减灾手抄报,安全教育手抄报,手抄报模板">
+    <title>防震手抄报图片大全集-安全教育主题设计素材与教程</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #3498db;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f5 0%, #e8f4fd 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        /* Gallery Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background-color: #eaf2f8;
+            color: var(--secondary-color);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .btn-download {
+            color: var(--primary-color);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+            transition: color 0.2s;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .tips-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            padding: 50px var(--spacing);
+            margin-top: 40px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            color: #666;
+            display: none;
+            padding-left: 10px;
+            border-left: 3px solid var(--accent-color);
+            margin-left: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px var(--spacing) 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                安全手抄报库
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">防震减灾</a></li>
+                    <li><a href="#">消防知识</a></li>
+                    <li><a href="#">交通规则</a></li>
+                    <li><a href="#">校园安全</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>防震手抄报图片大全集</h1>
+            <p>提供专业、美观的防震减灾主题手抄报设计素材与排版参考，帮助学生轻松完成安全教育作业。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索防震手抄报、模板、颜色...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main>
+            <section class="gallery-section">
+                <div class="section-title">
+                    <span>精选防震手抄报模板</span>
+                    <span style="font-size:0.9rem; color:#888; font-weight:normal;">共 128 套设计</span>
+                </div>
+                
+                <div class="gallery-grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake1/400/300" alt="防震减灾手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">基础版</span>
+                            <h3 class="card-title">防震减灾从我做起</h3>
+                            <p class="card-desc">适合小学低年级使用，版面整洁，重点突出地震避险知识。</p>
+                            <div class="card-footer">
+                                <span>2023-10-15</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake2/400/300" alt="地震逃生手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">进阶版</span>
+                            <h3 class="card-title">地震逃生与自救</h3>
+                            <p class="card-desc">内容丰富，包含地震成因及不同场景下的逃生技巧。</p>
+                            <div class="card-footer">
+                                <span>2023-10-14</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake3/400/300" alt="防震安全手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">创意版</span>
+                            <h3 class="card-title">守护生命安全线</h3>
+                            <p class="card-desc">采用插画风格，色彩鲜明，适合初中生展示创意。</p>
+                            <div class="card-footer">
+                                <span>2023-10-12</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake4/400/300" alt="防灾减灾手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">通用版</span>
+                            <h3 class="card-title">防灾减灾日主题</h3>
+                            <p class="card-desc">结合5.12防灾减灾日背景，设计大气庄重。</p>
+                            <div class="card-footer">
+                                <span>2023-10-10</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake5/400/300" alt="地震知识手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">科普版</span>
+                            <h3 class="card-title">地震知识知多少</h3>
+                            <p class="card-desc">以问答形式排版，知识点清晰，易于阅读。</p>
+                            <div class="card-footer">
+                                <span>2023-10-08</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/quake6/400/300" alt="防震演练手抄报图片">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">活动版</span>
+                            <h3 class="card-title">防震应急演练</h3>
+                            <p class="card-desc">侧重于学校防震演练流程的图文展示。</p>
+                            <div class="card-footer">
+                                <span>2023-10-05</span>
+                                <span class="btn-download">查看详情</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="section-title">
+                    <span>防震手抄报制作指南</span>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">手抄报报头设计有哪些技巧？</div>
+                        <div class="faq-answer">
+                            报头是手抄报的眼睛，应醒目、新颖、简洁。可以使用美术字，配合边框和底纹装饰。对于“防震”主题，可以使用盾牌、地震波、警示标志等元素作为报头装饰。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何合理分配版面？</div>
+                        <div class="faq-answer">
+                            建议采用“图文并茂”的原则。将标题放在显眼位置（如左上角或中间），正文内容均匀分布，留出适当的空白。可以使用竖线、波浪线或卡通插图来分割不同的版块。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">防震手抄报适合什么配色？</div>
+                        <div class="faq-answer">
+                            防震减灾主题通常建议使用红色（警示）、黄色（警告）、蓝色（科技/冷静）或橙色（活力）。背景可以使用淡黄色或淡蓝色，使文字更清晰，同时保持视觉上的舒适度。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">哪里可以下载高清防震手抄报素材？</div>
+                        <div class="faq-answer">
+                            本站提供多种风格的防震手抄报图片大全集，涵盖小学、初中及高中版本，可直接在线预览或下载高清图片作为参考。
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">防震减灾手抄报 <span>(45)</span></a></li>
+                    <li><a href="#">消防安全手抄报 <span>(32)</span></a></li>
+                    <li><a href="#">交通安全手抄报 <span>(28)</span></a></li>
+                    <li><a href="#">校园防欺凌 <span>(15)</span></a></li>
+                    <li><a href="#">网络安全手抄报 <span>(12)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">制作小贴士</h3>
+                <ul class="tips-list">
+                    <li>纸张建议使用8开或16开素描纸。</li>
+                    <li>排版时注意留出边距，不要贴满。</li>
+                    <li>色彩搭配建议不超过三种主色调。</li>
+                    <li>标题字体建议使用黑体或行楷。</li>
+                    <li>内容可引用“地震预警”、“避险姿势”等关键词。</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">安全教育周</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">每年5月12日为全国防灾减灾日，是制作此类手抄报的最佳时机。</p>
+                <button style="width: 100%; padding: 10px; background: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">了解更多</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源分类</h4>
+                <ul>
+                    <li><a href="#">防震减灾</a></li>
+                    <li><a href="#">消防安全</a></li>
+                    <li><a href="#">环境保护</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">下载帮助</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 安全手抄报库 版权所有 | 防震手抄报图片大全集提供支持
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                      </html>
